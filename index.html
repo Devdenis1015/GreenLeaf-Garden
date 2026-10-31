@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenLeaf Garden | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1 id="greeting">Welcome to GreenLeaf Garden</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">Volunteer</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Our Mission</h2>
+      <p>
+        GreenLeaf Garden is a volunteer-run urban garden dedicated to growing healthy food, 
+        promoting sustainability, and fostering a sense of community.
+      </p>
+    </section>
+
+    <section class="events">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <li> Seed Planting Workshop — November 15, 2025</li>
+        <li> Harvest Festival — December 5, 2025</li>
+        <li> Composting 101 — January 10, 2026</li>
+      </ul>
+    </section>
+
+    <section class="cta">
+      <button id="joinBtn">Join as Volunteer</button>
+      <div id="signupPrompt" class="hidden">
+        <p>We’d love to have you join our garden community! Visit our 
+          <a href="about.html">Volunteer Form</a> to sign up.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GreenLeaf Garden | Growing Together </p>
+  </footer>
+
+  <script>
+    // Dynamic greeting
+    $(document).ready(function() {
+      const hour = new Date().getHours();
+      let greeting;
+      if (hour < 12) greeting = "Good Morning";
+      else if (hour < 18) greeting = "Good Afternoon";
+      else greeting = "Good Evening";
+      $("#greeting").text(`${greeting} from GreenLeaf Garden`);
+
+      // CTA button interaction
+      $("#joinBtn").click(function() {
+        $("#signupPrompt").slideToggle();
+      });
+    });
+  </script>
+</body>
+</html>
